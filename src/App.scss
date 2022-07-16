@@ -1,5 +1,5 @@
 .App {
-    background-color: var(--primary-color);
+    background-color: rgb(26, 26, 26);
     font-family: var(--font-base);
     min-height: 100vh;
 
@@ -8,47 +8,67 @@
         color: var(--white-color);
         display: flex;
         flex-direction: row;
+        text-align: center;
         align-items: center;
         justify-content: center;
-        background-color: rgb(52, 52, 52);
+        background-color: rgb(26, 26, 26);
         backdrop-filter: blur(3px);
-        border: 1px solid rgba(255, 255, 255, 0.238);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 0.5rem 0rem;
         position: relative;
-        font-weight: 200;
+        font-weight: 300;
         
         transition: all 0.4s ease-in-out;
         &:hover{
-            color: var(--gray-color);
+            color: rgb(227, 88, 255);
         }
     }
     
     .Header__text{
         margin-top: 2rem;
+        color: var(--white-color);
         display: flex;
+        text-align: center;
         justify-content: center;
+        align-items: center;
         border-radius: 15px;
         height: auto;
         width: auto;
+        font-weight: 200;
+
+        span {
+            color: rgb(227, 88, 255); 
+            
+        }
 
     }
     .Header__text1{
-        margin-top: 0.5rem;
+        margin-top: 1.5rem;
+        color: var(--white-color);
         display: flex;
         justify-content: center;
         border-radius: 15px;
         height: auto;
         width: auto;
+        font-weight: 200;
+
+        a{
+            color: rgb(169, 88, 251);
+            font-weight: 500;
+        }
     }
     .inputHolder {
         padding: 2rem 1rem ;
         display: flex;
         margin: auto;
         width: 300px;
+        align-items: center;
+        justify-content: center;
 
         .uploadInput{
             padding: 1rem 2rem;
             border-radius: 15px;
+            background-color: var(--white-color);
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             align-items: center;
             display: flex;
@@ -58,7 +78,7 @@
             cursor: pointer;
             transition: all 0.4s ease-in-out;
             &:hover{
-                box-shadow: 0 0 25px rgba(0,0,0,0.35);
+                box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
             }
         }
 
@@ -80,7 +100,7 @@
             border: none;
             box-shadow: 0 0 20px rgba(0,0,0,0.2);
             padding: 0.5rem 1.5rem;
-            background-color: var(--secondary-color);
+            background-color: rgba(140,42,235,1);
             color: var(--white-color);
             cursor: pointer;
             transition: all 0.4s ease-in-out;
@@ -103,10 +123,12 @@
 
         .resultsHolder {
             padding: 30px;
+            margin-left: 2rem;
         
             @media (max-width: 800px) {
                 width: 100%;
                 padding: 0 0.5rem;
+                margin-left: 0;
             }
         
             .result {
@@ -114,10 +136,17 @@
                 border-radius: 10px;
                 margin: 0 0 10px;
                 padding: 10px;
+                color: var(--white-color);
+                
+                @media screen and (max-width: 1200px) {
+                    margin-top: 1rem;
+                    
+                }
         
                 &:first-of-type {
-                    border-color: var(--secondary-color);
-                    background-color: var(--secondary-color);
+                    border-color: none;
+                    background: linear-gradient(130deg, rgba(140,42,235,1) 15%, rgba(230,10,170,1) 100%);
+
         
                     .name { color: #fff; }
                     .confidence { color: #dfdfdf; }
@@ -125,17 +154,20 @@
         
                 .name {
                     font-size: 20px;
-                    font-weight: 600;
+                    font-weight: 500;
                     text-transform: uppercase;
                 }
         
                 .confidence {
                     display: block;
-                    font-weight: 300;
+                    font-weight: 200;
+                    color: rgb(227, 88, 255);
         
                     .bestGuess {
                         background: #fff;
                         padding: 2px 6px;
+                        align-items: flex-end;
+                        border-radius: 10px;
                         color: #333;
                         margin-left: 3px;
                     }
@@ -150,8 +182,7 @@
                 width: 100%;
                 height: 100%;
                 margin-left: 2rem;
-                border-radius: 10rem;
-                padding: 0 1rem;
+                
                 img {
                     width: 100%;
                     height: 100%;
@@ -159,6 +190,7 @@
 
                     object-fit: contain;
                     border-radius: 1rem;
+                    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 
                     @media screen and (max-width: 1200px) {
                         width: 100%;
@@ -166,7 +198,7 @@
                         margin-left: 0rem;
                     }
                 }
-                @media screen and (max-width: 1000px) {
+                @media screen and (max-width: 800px) {
                     width: 100%;
                     height: 50%;
                     margin-left: 0rem;

@@ -3,7 +3,7 @@ import * as mobilenet from "@tensorflow-models/mobilenet";
 import react from 'react'
 import {useState, useEffect, useRef} from 'react';
 import {motion} from 'framer-motion';
-
+import Typerwriter from 'typewriter-effect'
 
 import './App.scss';
 
@@ -54,18 +54,35 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="Header">Image Idenification Application</h1>
-      <h2 className="Header__text">Please input an image for classification!</h2>
+      <h1 className="Header">
+        <Typerwriter
+          options={{
+              strings:["Image Idenification Application","I hope you like it! <3"],
+              autoStart: true,
+              loop: true,
+          }} 
+      /></h1>
+      <h2 className="Header__text"><p>Please input an&nbsp;<span>image</span>&nbsp;for&nbsp;<span>classification!</span></p></h2>
       <h4 className="Header__text1">This application was created by&nbsp;<a href="https://ma-raymond.github.io/portfolio/"  target='_blank' rel='noreferrer'>Raymond Ma</a></h4>
-      <div className="inputHolder"><input type='file' accept='image/*' capture='camera' className='uploadInput'
+      <motion.div className="inputHolder"
+      animate={{rotate:[1,-1,1]}}
+      transition={{ease:"linear",duration:2,repeat:Infinity}}
+      >
+        <motion.div
+        whileHover={{scale:1.1}}>
+        <input type='file' accept='image/*' capture='camera' className='uploadInput'
       onChange={uploadImage}
       />
-      </div>
+      </motion.div>
+      </motion.div>
       <div className="mainWrapper">
         <div className="mainContent">
-          <div className="imageHolder">
+          <motion.div className="imageHolder"
+          whileInView={{scale:[0.9,1], rotate:[2,-2,0]}}
+          
+          >
               {imageURL && <img src={imageURL} alt='Upload Preview' crossOrigin="anonymous" ref={imageRef}/>}
-          </div>
+          </motion.div>
         </div>
         {results.length > 0 && <div className='resultsHolder'>
             {results.map((result, index) => {

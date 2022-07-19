@@ -55,13 +55,17 @@ function App() {
   return (
     <div className="App">
       <h1 className="Header">
-        <Typerwriter
+        Image classification Application
+        <p>
+        <Typerwriter className='typewriter'
           options={{
-              strings:["Image Idenification Application","I hope you like it! <3"],
+              strings:["Consider checking out my portfolio website!","I hope you like it! <3"],
               autoStart: true,
               loop: true,
           }} 
-      /></h1>
+      />
+        </p>
+        </h1>
       <h2 className="Header__text"><p>Please input an&nbsp;<span>image</span>&nbsp;for&nbsp;<span>classification!</span></p></h2>
       <h4 className="Header__text1">This application was created by&nbsp;<a href="https://ma-raymond.github.io/portfolio/"  target='_blank' rel='noreferrer'>Raymond Ma</a></h4>
       <motion.div className="inputHolder"

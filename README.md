@@ -1,4 +1,4 @@
-# Demo
+# Demo Web Application
 https://ma-raymond.github.io/image-classification/
 
 # image-classification
